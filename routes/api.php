@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CurrencyReceiptController;
+use App\Http\Controllers\CurrencyReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/currency-receipts', 'CurrencyReceiptController@store');
+Route::post('/currency-receipts', [CurrencyReceiptController::class, 'store']);
+Route::get('/currency-receipts', [CurrencyReportController::class, 'index']);
