@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/currency-receipts', [CurrencyReceiptController::class, 'store']);
 Route::get('/currency-receipts', [CurrencyReportController::class, 'index']);
+Route::get('/currency-assets', [CurrencyReportController::class, 'assets']);
